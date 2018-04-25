@@ -1,7 +1,7 @@
 {
   "name": "vimo-vuepress",
   "version": "1.0.0",
-  "description": "xx xx xx",
+  "description": "Docs for Vimo components",
   "scripts": {
     "dev": "vuepress dev docs",
     "build": "vuepress build docs",
@@ -10,17 +10,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/xx/xx.git"
+    "url": "git+https://github.com/xiangsongtao/vimo-vuepress.git"
   },
   "keywords": [
     "xx"
   ],
-  "author": "xx",
+  "author": "xiangsongtao <280304286@163.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/xx/xx/issues"
+    "url": "https://github.com/xiangsongtao/vimo-vuepress/issues"
   },
-  "homepage": "https://github.com/xx/xx#readme",
+  "homepage": "https://github.com/xiangsongtao/vimo-vuepress#readme",
   "gitHooks": {
     "pre-commit": "lint-staged"
   },
