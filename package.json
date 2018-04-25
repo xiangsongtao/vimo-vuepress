@@ -1,0 +1,47 @@
+{
+  "name": "vimo-vuepress",
+  "version": "1.0.0",
+  "description": "xx xx xx",
+  "scripts": {
+    "dev": "vuepress dev docs",
+    "build": "vuepress build docs",
+    "lint": "eslint bin lib test",
+    "prepublishOnly": "conventional-changelog -p angular -r 2 -i CHANGELOG.md -s"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xx/xx.git"
+  },
+  "keywords": [
+    "xx"
+  ],
+  "author": "xx",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/xx/xx/issues"
+  },
+  "homepage": "https://github.com/xx/xx#readme",
+  "gitHooks": {
+    "pre-commit": "lint-staged"
+  },
+  "lint-staged": {
+    "lib/**/*.js": [
+      "eslint --fix",
+      "git add"
+    ],
+    "test/**/*.js": [
+      "eslint --fix",
+      "git add"
+    ]
+  },
+  "dependencies": {
+    "vuepress": "^0.8.4"
+  },
+  "devDependencies": {},
+  "engines": {
+    "node": ">=8"
+  },
+  "browserslist": [
+    ">1%"
+  ]
+}
