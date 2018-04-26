@@ -1,29 +1,29 @@
-# Markdown Extensions
+# Markdown 拓展
 
 ## Header Anchors
 
-Headers automatically get anchor links applied. Rendering of anchors can be configured using the [`markdown.anchor`](../config/#markdownanchor) option.
+所有的标题将会自动地应用 anchor 链接，anchor 的渲染可以通过 [`markdown.anchor`](../config/#markdownanchor) 来配置。
 
-## Links
+## 链接
 
-### Internal Links
+### 内部链接
 
-Inbound links ending in `.md` or `.html` are converted to `<router-link>` for SPA navigation.
+内部的、并以 `.md` or `.html` 结尾的链接，将会被转换成 `<router-link>` 用于 SPA 导航。
 
-Each sub-directory in your static site should contain a `README.md`. It will automatically be converted to `index.html`.
+站内的每一个子文件夹都应当有一个 `README.md` 文件，它会被自动编译为 `index.html`。
 
 ::: tip
-When writing the relative path to a directory's `index.html`, don't forget to close it off with a `/`, otherwise you will get a 404. For example, use `/config/` instead of `/config`.
+在链接到一个文件夹的 `index.html` 时，确保你的链接以 `/` 结尾，否则该链接将导致 404。比如，用 `/config/` 而不是 `/config`。
 :::
 
-If you want to link to another markdown file within a directory, remember to:
+如果你想要链接到另一个 markdown 文件：
 
-1.  Append it with either `.html` or `.md`
-2.  Make sure the case matches since the path is case-sensitive
+1. 确保链接以 `.html` 或 `.md` 结尾；
+2. 确保路径大小写正确，因为路径的匹配是大小写敏感的。
 
-#### Example
+#### 示例
 
-Given the following directory structure:
+以如下的文件结构为例：
 
 ```
 .
@@ -39,23 +39,23 @@ Given the following directory structure:
 ```
 
 ```md
-[Home](/) <!-- Sends the user to the root README.md -->
-[foo](/foo/) <!-- Sends the user to index.html of directory foo -->
-[foo heading anchor](/foo/#heading) <!-- Anchors user to a heading in the foo README file -->
-[foo - one](/foo/one.html) <!-- You can append .html -->
-[foo - two](/foo/two.md) <!-- Or you can append .md -->
+[Home](/) <!-- 跳转到根部的 README.md -->
+[foo](/foo/) <!-- 跳转到 foo 文件夹的 index.html -->
+[foo heading anchor](/foo/#heading) <!-- 跳转到 foo/index.html 的特定 anchor 位置 -->
+[foo - one](/foo/one.html) <!-- 具体文件可以使用 .html 结尾 -->
+[foo - two](/foo/two.md) <!-- 也可以用 .md -->
 ```
 
-### External Links
+### 外部链接
 
-Outbound links automatically gets `target="_blank"`:
+外部的链接将会被自动地设置为  `target="_blank"`:
 
 - [vuejs.org](https://vuejs.org)
 - [VuePress on GitHub](https://github.com/vuejs/vuepress)
 
 ## Front Matter
 
-[YAML front matter](https://jekyllrb.com/docs/frontmatter/) is supported out of the box:
+VuePress 提供了对 [YAML front matter](https://jekyllrb.com/docs/frontmatter/) 开箱即用的支持:
 
 ``` yaml
 ---
@@ -64,9 +64,9 @@ lang: en-US
 ---
 ```
 
-The data will be available to the rest of the page, plus all custom and theming components as `$page`.
+这些数据可以在当前页的正文中使用，在任意的自定义或主题组件中，它可以通过 `$page` 来访问。
 
-`title` and `lang` will be automatically set on the current page. In addition you can specify extra meta tags to be injected:
+`title` 和 `lang` 的 meta 将会被自动地注入到当前的页面中，当然你也可以指定一些额外需要注入的 meta：
 
 ``` yaml
 ---
@@ -78,11 +78,11 @@ meta:
 ---
 ```
 
-### Alternative Front Matter Formats
+### 其他格式的 Front Matter
 
-In addition, VuePress also supports JSON or [TOML](https://github.com/toml-lang/toml) front matter.
+除了 YAML 之外，VuePress 也支持 JSON 或者 [TOML](https://github.com/toml-lang/toml) 格式的 front matter。
 
-JSON front matter needs to start and end in curly braces:
+JSON front matter 需要以花括号开头和结尾：
 
 ```
 ---
@@ -93,7 +93,7 @@ JSON front matter needs to start and end in curly braces:
 ---
 ```
 
-TOML front matter needs to be explicitly marked as TOML:
+TOML front matter 需要显式地标注为 TOML：
 
 ```
 ---toml
@@ -102,7 +102,7 @@ lang = "en-US"
 ---
 ```
 
-## GitHub-Style Tables
+## GitHub 风格的表格
 
 **Input**
 
@@ -122,7 +122,7 @@ lang = "en-US"
 | col 2 is      | centered      |   $12 |
 | zebra stripes | are neat      |    $1 |
 
-## Emoji :tada:
+## Emoji
 
 **Input**
 
@@ -134,9 +134,7 @@ lang = "en-US"
 
 :tada: :100:
 
-A list of all emojis available can be found [here](https://github.com/markdown-it/markdown-it-emoji/blob/master/lib/data/full.json).
-
-## Table of Contents
+## 目录
 
 **Input**
 
@@ -148,9 +146,9 @@ A list of all emojis available can be found [here](https://github.com/markdown-i
 
 [[toc]]
 
-Rendering of TOC can be configured using the [`markdown.toc`](../config/#markdowntoc) option.
+目录（Table of Contents）的渲染可以通过  [`markdown.toc`](../config/#markdowntoc) 选项来配置。
 
-## Custom Containers
+## 自定义容器
 
 **Input**
 
@@ -182,7 +180,7 @@ This is a warning
 This is a dangerous thing
 :::
 
-You can also customize the title of the block:
+你也可以自定义块中的标题：
 
 ```
 ::: danger STOP
@@ -194,7 +192,7 @@ Danger zone, do not proceed
 Danger zone, do not proceed
 :::
 
-## Line Highlighting in Code Blocks
+## 代码块中的行高亮
 
 **Input**
 
@@ -222,19 +220,19 @@ export default {
 }
 ```
 
-## Advanced Configuration
+## 进阶配置
 
-VuePress uses [markdown-it](https://github.com/markdown-it/markdown-it) as the markdown renderer. A lot of the extensions above are implemented via custom plugins. You can further customize the `markdown-it` instance using the `markdown` option in `.vuepress/config.js`:
+VuePress 使用 [markdown-it](https://github.com/markdown-it/markdown-it) 来渲染 Markdown，上述大多数的拓展也都是通过自定义的插件实现的。想要进一步的话，你可以通过 `.vuepress/config.js` 的 `markdown` 选项，来对当前的 `markdown-it` 实例做一些自定义的配置：
 
 ``` js
 module.exports = {
   markdown: {
-    // options for markdown-it-anchor
+    // markdown-it-anchor 的选项
     anchor: { permalink: false },
-    // options for markdown-it-toc
+    // markdown-it-toc 的选项
     toc: { includeLevel: [1, 2] },
     config: md => {
-      // use more markdown-it plugins!
+      // 使用更多的 markdown-it 插件!
       md.use(require('markdown-it-xxx'))
     }
   }
