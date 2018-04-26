@@ -2,7 +2,7 @@
 sidebarDepth: 0
 ---
 
-# App
+# Header
 
 ## Props
 
@@ -13,7 +13,3 @@ sidebarDepth: 0
 ## Methods
 
 ## Example
-
-### Example1
-### Example2
-### Example3

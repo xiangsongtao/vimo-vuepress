@@ -1,3 +1,7 @@
+---
+sidebarDepth: 0
+---
+
 # Grid
 
 ## Props
@@ -8,4 +12,4 @@
 
 ## Methods
 
-## Demo
+## Example

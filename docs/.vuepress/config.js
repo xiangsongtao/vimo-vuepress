@@ -64,12 +64,23 @@ module.exports = {
             },
             {
               title: '布局',
-              collapsable: false,
               children: [
                 'app',
+                'nav',
                 'page',
+                'header',
+                'footer',
                 'content',
                 'grid'
+              ]
+            },
+            {
+              title: '导航',
+              children: [
+                'menu',
+                'segment',
+                'scroll-segment',
+                'tabs',
               ]
             }
           ]
